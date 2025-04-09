@@ -3,10 +3,10 @@
 
 | ![Screenshot](screenshot.png) |
 |:--:|
-| Example showcasing the Theme for [Helix](https://github.com/helix-editor/helix), [Zellij](https://github.com/zellij-org/zellij) & [Ghostty](https://github.com/ghostty-org/ghostty) |
+| Screenshot showcasing the Theme for [Helix](https://github.com/helix-editor/helix), [Zellij](https://github.com/zellij-org/zellij) & [Ghostty](https://github.com/ghostty-org/ghostty) |
 
 
-## Usage with flakes
+## Usage with Flakes
 
 > [!NOTE]  
 > The following flake example is incomplete. It's supposed to highlight the changes
@@ -15,7 +15,7 @@
 ```diff
 {
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager";
 +   chalkboard-theme.url = "github:mariocala/chalkboard-theme";
   };
@@ -43,13 +43,13 @@
     homeConfigurations.foo = home-manager.lib.homeManagerConfiguration {
       modules = [
 +       chalkboard-theme.homeModules.chalkboard-theme
-      ]
+      ];
     };
   };
 }
 ```
 
-## Module configuration
+## Home configuration
 
 Enable for individual programs
 
@@ -59,7 +59,7 @@ Enable for individual programs
 }
 ```
 
-or for all programs and disable individually
+or for all supported programs and disable individually
 
 ```nix
 {
