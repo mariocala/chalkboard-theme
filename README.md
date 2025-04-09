@@ -10,7 +10,7 @@
 
 > [!NOTE]  
 > The following flake example is incomplete. It's supposed to highlight the changes
-> necessary to use this theme module with home-manager.
+> necessary to use this theme with home-manager.
 
 ```diff
 {
@@ -25,7 +25,7 @@
     home-manager
 +   chalkboard-theme
   }: {
-    # When using home-manager with NixOS module
+    # When using home-manager as NixOS module
     nixosConfigurations.foo = pkgs.lib.nixosSystem {
       modules = [
         home-manager.nixosModules.home-manager
